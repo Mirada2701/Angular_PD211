@@ -1,0 +1,25 @@
+@if (task.checked === true) {
+    @if(task.important === true){
+    <li class="done important">
+        <del>
+            {{task.text}}
+        </del>
+    </li>
+    }
+    @else{
+        <li class="done">
+            <del>
+                {{task.text}}
+            </del>
+        </li>
+    }
+}
+@else{
+    <li [class.important]="task.important === true">
+        {{task.text}}
+        @if (task.date != null) {
+        <span class="deadline">{{task.date}}</span>
+        }
+    </li>
+}
+

@@ -1,0 +1,33 @@
+li.important::before {
+    content: "!";
+    margin: 0 8px;
+    color: darkred;
+    display: inline-block;
+}
+
+li .deadline {
+    background-color: rgb(120, 153, 164);
+    color: white;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+li {
+    padding: 12px;
+    padding-left: 40px;
+    background-color: rgb(51, 138, 168);
+     list-style: inside url(/src/assets/360_F_308325753_F7YiB9zlGy76NZI8drDf5iIdJ1XnHqbM.jpg); 
+}
+
+li.done {
+    background-color: rgb(226, 226, 226);
+    list-style: inside url(/src/assets/checkbox-checked.svg); 
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+li:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+
+
