@@ -1,10 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITask } from '../task';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-task-card',
-  imports: [],
+  imports: [
+    DatePipe
+  ],
   templateUrl: './task-card.component.html',
   styleUrl: './task-card.component.css'
 })
@@ -12,11 +15,12 @@ import { ITask } from '../task';
 export class TaskCardComponent {
   
   @Input()
-  task: ITask = {
-    checked: false,
-    important: true,
-    text: '',
-    date: ""
-  }
+  task?: ITask;
 
+  @Output()
+  onDelete = new EventEmitter<number>();
+
+  delete(){
+    this.onDelete.emit(this.task?.id);
+  }
 }

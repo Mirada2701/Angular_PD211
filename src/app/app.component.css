@@ -1,11 +1,22 @@
 ul.todo_list {
     list-style: none;
-    padding: 0;
+    padding: 10;
     margin: 0;
     border-radius: 6px;
     overflow: hidden;
 }
+.todo_list>div:nth-child(even) {
+    background-color: rgb(174, 216, 229);
+}
 
+
+.todo_list>div:nth-child(odd) {
+    background-color: rgb(51, 138, 168);
+}
+
+button{
+    margin: 40px;
+}
 
 
 

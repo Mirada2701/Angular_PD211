@@ -14,19 +14,31 @@ li .deadline {
 li {
     padding: 12px;
     padding-left: 40px;
-    background-color: rgb(51, 138, 168);
-     list-style: inside url(/src/assets/360_F_308325753_F7YiB9zlGy76NZI8drDf5iIdJ1XnHqbM.jpg); 
+    list-style:inside circle; 
 }
 
 li.done {
     background-color: rgb(226, 226, 226);
-    list-style: inside url(/src/assets/checkbox-checked.svg); 
+    list-style: inside circle; 
     text-decoration: line-through;
     text-decoration-thickness: 2px;
 }
 li:hover {
     filter: brightness(90%);
     cursor: pointer;
+}
+
+button{
+    border-radius: 50%;
+    margin-left: 5px;
+    transition: 0.2s;
+    background-color: red;
+}
+button:hover{
+    transform: scale(1.2);
+}
+div{
+    display: inline-block;
 }
 
 

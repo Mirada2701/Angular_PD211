@@ -2,6 +2,17 @@
 
 <ul class="todo_list">
   @for (t of tasks; track $index) {
-    <app-task-card [task]="t"></app-task-card>
+    <div>
+      <app-task-card [task]="t" (onDelete)="delete($event)"></app-task-card>
+    </div>
+    
   }
 </ul>
+
+<div>
+  <button (click)="clear()">Clear All</button>
+</div>
+
+<h2>Create new task</h2>
+
+<app-task-form (onCreate)="create($event)"></app-task-form>

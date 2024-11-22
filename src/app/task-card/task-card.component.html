@@ -1,25 +1,41 @@
-@if (task.checked === true) {
+@if(task){
+    @if (task.checked === true) {
     @if(task.important === true){
     <li class="done important">
         <del>
             {{task.text}}
+            @if (task.date != null) {
+            <span class="deadline">{{task.date | date:'longDate'}}</span>
+            }
         </del>
+        <div>
+            <button (click)="delete()">X</button>
+        </div>
     </li>
     }
     @else{
-        <li class="done">
-            <del>
-                {{task.text}}
-            </del>
-        </li>
+    <li class="done">
+        <del>
+            {{task.text}}
+            @if (task.date != null) {
+            <span class="deadline">{{task.date | date:'longDate'}}</span>
+            }
+        </del>
+        <div>
+            <button (click)="delete()">X</button>
+        </div>
+    </li>
     }
-}
-@else{
+    }
+    @else{
     <li [class.important]="task.important === true">
         {{task.text}}
         @if (task.date != null) {
-        <span class="deadline">{{task.date}}</span>
+        <span class="deadline">{{task.date | date:'longDate'}}</span>
         }
+        <div>
+            <button (click)="delete()">X</button>
+        </div>
     </li>
+    }
 }
-
