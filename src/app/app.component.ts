@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { ITask, TASKS } from './task';
 import { TaskCardComponent } from "./task-card/task-card.component";
 import { TaskFormComponent } from "./task-form/task-form.component";
+import { HttpClient } from '@angular/common/http';
+import { TasksService } from './services/tasks.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,15 @@ import { TaskFormComponent } from "./task-form/task-form.component";
 export class AppComponent {
   title = 'Angular_PD211';
   name = "Vitaliy Labenskyi";
-  tasks: ITask[] = TASKS;  
+
+
+  tasks: ITask[] = []; 
+
+  constructor(private taskService: TasksService) {    
+    taskService.getAll().subscribe((data) =>
+      this.tasks = data
+    );
+  }
 
   clear(){
     for(let t of this.tasks)

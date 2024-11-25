@@ -1,9 +1,9 @@
 @if(task){
-    @if (task.checked === true) {
+    @if (task.completed === true) {
     @if(task.important === true){
     <li class="done important">
         <del>
-            {{task.text}}
+            {{task.title}}
             @if (task.date != null) {
             <span class="deadline">{{task.date | date:'longDate'}}</span>
             }
@@ -16,7 +16,7 @@
     @else{
     <li class="done">
         <del>
-            {{task.text}}
+            {{task.title}}
             @if (task.date != null) {
             <span class="deadline">{{task.date | date:'longDate'}}</span>
             }
@@ -29,7 +29,7 @@
     }
     @else{
     <li [class.important]="task.important === true">
-        {{task.text}}
+        {{task.title}}
         @if (task.date != null) {
         <span class="deadline">{{task.date | date:'longDate'}}</span>
         }

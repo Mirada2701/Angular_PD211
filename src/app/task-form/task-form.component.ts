@@ -21,9 +21,9 @@ export class TaskFormComponent {
   constructor(private formBuilder: FormBuilder) {
     this.taskForm = formBuilder.group(
       {
-        checked: [true, Validators.required],
+        completed: [true, Validators.required],
         important: [true,Validators.required],
-        text: ['', Validators.required],
+        title: ['', Validators.required],
         date: [new Date()]
       });
   }

@@ -1,7 +1,7 @@
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
     <label>
         <span>Checked:</span>
-        <input type="checkbox" formControlName="checked">
+        <input type="checkbox" formControlName="completed">
     </label>
     <label>
         <span>Important:</span>
@@ -9,7 +9,7 @@
     </label>
     <label>
         <span>Task name:</span>
-        <input type="text" formControlName="text">
+        <input type="text" formControlName="title">
     </label>
     <label>
         <span>Date:</span>
