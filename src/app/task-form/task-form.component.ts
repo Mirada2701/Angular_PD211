@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ITask } from '../task';
-import { FormBuilder,ReactiveFormsModule} from '@angular/forms';
+import { FormBuilder,ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-task-form',
@@ -21,9 +21,9 @@ export class TaskFormComponent {
   constructor(private formBuilder: FormBuilder) {
     this.taskForm = formBuilder.group(
       {
-        checked: [true],
-        important: [true],
-        text: [''],
+        checked: [true, Validators.required],
+        important: [true,Validators.required],
+        text: ['', Validators.required],
         date: [new Date()]
       });
   }
